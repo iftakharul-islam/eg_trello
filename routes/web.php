@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('/login', function (Request $request) {
+//    return response()->json(['dfasd'=>'fasdfds']);
+echo $request->email;
+});
+
+Route::view('/{path?}', 'welcome')
+    ->where('/', '.*');
